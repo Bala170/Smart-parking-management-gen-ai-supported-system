@@ -1,0 +1,14 @@
+﻿# Smart Parking Backend
+FastAPI
+uvicorn[standard]
+SQLAlchemy>=2.0.0
+pymysql
+alembic
+python-dotenv
+pydantic[email]
+python-jose[cryptography]
+passlib[bcrypt]
+email-validator
+python-multipart
+pytest
+httpx

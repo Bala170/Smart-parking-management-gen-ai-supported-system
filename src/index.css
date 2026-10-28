@@ -1,0 +1,294 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', monospace;
+
+  /* Slate is the single structural neutral family used throughout the app. */
+  --color-slate-50: #F4F6F3;
+  --color-slate-100: #EDF1ED;
+  --color-slate-200: #DCE3DD;
+  --color-slate-300: #CBD3CD;
+  --color-slate-400: #89948D;
+  --color-slate-500: #52605A;
+  --color-slate-600: #43514A;
+  --color-slate-700: #34413A;
+  --color-slate-800: #27312C;
+  --color-slate-900: #1E2521;
+  --color-slate-950: #171D19;
+
+  /* Existing blue utilities now resolve to the sole pine brand accent. */
+  --color-blue-50: #EAF3EE;
+  --color-blue-100: #DCE9E1;
+  --color-blue-200: #C6D9CB;
+  --color-blue-300: #A9C6B3;
+  --color-blue-400: #82A98F;
+  --color-blue-500: #5D876E;
+  --color-blue-600: #355E4D;
+  --color-blue-700: #294A3A;
+  --color-blue-800: #213A2F;
+  --color-blue-900: #1A2E24;
+
+  /* State colors retain meaning and share the same restrained saturation. */
+  --color-emerald-50: #EAF3EE;
+  --color-emerald-100: #D6E8DC;
+  --color-emerald-200: #B8D4C2;
+  --color-emerald-500: #43815D;
+  --color-emerald-600: #28664A;
+  --color-emerald-700: #20523C;
+  --color-emerald-800: #1B4434;
+  --color-amber-50: #FAF1DE;
+  --color-amber-100: #F4E6C7;
+  --color-amber-200: #E8D19E;
+  --color-amber-500: #A8792F;
+  --color-amber-600: #956B28;
+  --color-amber-700: #805B20;
+  --color-amber-800: #875C1C;
+  --color-red-50: #F8E9E8;
+  --color-red-100: #F1D7D5;
+  --color-red-200: #E5BEBA;
+  --color-red-500: #B6534D;
+  --color-red-600: #A3423D;
+  --color-red-700: #913B37;
+  --color-red-800: #803733;
+  --color-purple-50: #EBF1F4;
+  --color-purple-100: #DDE8ED;
+  --color-purple-200: #C5D5DD;
+  --color-purple-500: #668394;
+  --color-purple-600: #4F7082;
+  --color-purple-700: #3F6072;
+  --color-purple-800: #355364;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+  --radius-3xl: 12px;
+
+  --shadow-xs: 0 1px 3px rgba(32, 52, 42, 0.04);
+  --shadow-sm: 0 2px 8px rgba(32, 52, 42, 0.05);
+  --shadow-md: 0 4px 14px rgba(32, 52, 42, 0.07);
+  --shadow-lg: 0 8px 24px rgba(32, 52, 42, 0.09);
+  --shadow-xl: 0 12px 32px rgba(32, 52, 42, 0.11);
+}
+
+:root {
+  color-scheme: light;
+  --canvas: #F4F6F3;
+  --surface: #FFFFFF;
+  --surface-secondary: #EDF1ED;
+  --text-primary: #1E2521;
+  --text-secondary: #52605A;
+  --text-muted: #75817B;
+  --action-primary: #355E4D;
+  --action-primary-hover: #294A3A;
+  --action-secondary: #E8EEE9;
+  --border: #DCE3DD;
+  --divider: #E8EDE9;
+  --focus-ring: #6F9C82;
+  --success: #28664A;
+  --success-surface: #EAF3EE;
+  --warning: #875C1C;
+  --warning-surface: #FAF1DE;
+  --error: #9C3F3F;
+  --error-surface: #F8E9E8;
+  --info: #3F6072;
+  --info-surface: #EBF1F4;
+  --disabled-control: #E7EBE8;
+  --disabled-text: #98A19C;
+  --surface-shadow: 0 2px 8px rgba(32, 52, 42, 0.05);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    min-width: 320px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    min-width: 320px;
+    margin: 0;
+    background: var(--canvas);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: 'JetBrains Mono', 'SFMono-Regular', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  .lucide {
+    stroke-width: 1.8;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button {
+    border-radius: 6px;
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+  }
+
+  input,
+  select,
+  textarea {
+    color: var(--text-primary);
+    border-radius: 8px;
+  }
+
+  button:disabled,
+  input:disabled,
+  select:disabled,
+  textarea:disabled {
+    color: var(--disabled-text);
+    background-color: var(--disabled-control);
+    cursor: not-allowed;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    color: #FFFFFF;
+    background: var(--action-primary);
+  }
+}
+
+/* Subtle, shared elevation. Heavy shadows and decorative glass are intentionally absent. */
+:where([class*="shadow-"]) {
+  box-shadow: var(--surface-shadow) !important;
+}
+
+button:active,
+[role="button"]:active {
+  transform: translateY(1px);
+}
+
+/* Keep utility-styled actions and fields inside the shared control scale. */
+button,
+a[class*="bg-"] {
+  min-height: 44px;
+  border-radius: 6px;
+}
+
+input,
+select,
+textarea {
+  min-height: 44px;
+  border-radius: 8px;
+}
+
+:where([class~="text-[9px]"], [class~="text-[10px]"], [class~="text-[10.5px]"], [class~="text-[11px]"]) {
+  font-size: 11.5px !important;
+  line-height: 1.4;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #FFFFFF;
+  background: var(--action-primary);
+  border-radius: 6px;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Compact data screens use the same radius hierarchy as the rest of the product. */
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD3CD;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #89948D;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .printable-card,
+  .printable-card * {
+    visibility: visible;
+  }
+
+  .printable-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 24px;
+    box-shadow: none !important;
+    border: 1px solid var(--border) !important;
+  }
+}
